@@ -9,6 +9,5 @@ dotenv.config();
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 // We create a model using the connection we've made
-const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
-
-export default model;
+export const imagesTextModel = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
+export const textOnlyModel = genAI.getGenerativeModel({ model: "gemini-pro" });
