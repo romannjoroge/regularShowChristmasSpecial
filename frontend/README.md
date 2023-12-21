@@ -15,3 +15,7 @@ npm start
 ```
 
 Make sure the backend is running before sending messages to the AI. Make sure to enter your own API Key at the backend as well.
+
+The component folder contains the components for the side bar and chat.
+
+The model folder contains the functions for sending chats to the backend.
