@@ -1,38 +1,114 @@
-.App {
+.app-content {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 100px;
+  right: 100px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  background-image: url("../public/regular_show_house.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  color: white;
+  font-size: 17px;
+}
+
+.app-logo {
   text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: rgb(4, 42, 43);
+  padding: 10px;
+  line-height: 1.5;
+  flex: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar {
+  flex: 4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-right: 1px solid white;
+}
+
+.previous-chats {
+  background-color: rgb(170, 189, 140);
+  flex: 20
+}
+
+.name-last-text {
+  height: 70px;
+  padding: 10px;
+  border-bottom: 2px solid white;
+}
+
+.sender-message {
+  width: fit-content;
+  padding: 10px;
+  margin-right: 10px;
+  height: fit-content;
+  justify-self: end;
+  background-color: green;
+}
+
+.sender-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.receiver-message p {
+  color: black;
+}
+
+.sender-message p {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.receiver-message {
+  width: fit-content;
+  margin-left: 10px;
+  padding: 10px;
+  height: fit-content;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.send-message {
+  padding: 10px;
+  background-color: black;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.prompt-input {
+  height: 50px;
+  margin: auto;
+  flex: 1;
+}
+
+.receiver-display {
+  padding: 10px;
+  background-color: rgb(4, 42, 43);
+}
+
+.prompt-button {
+  height: 50px;
+}
+
+.display-message {
+  flex: 1;
+}
+
+.chat {
+  flex: 10;
+  background-color: black;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
 }
