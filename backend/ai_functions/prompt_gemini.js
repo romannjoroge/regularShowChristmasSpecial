@@ -70,5 +70,3 @@ async function test() {
     const response = await chatWithAI(chat, "Benson told us to rake the leaves again!");
     console.log(response);
 }
-
-test();
