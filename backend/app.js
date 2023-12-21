@@ -3,10 +3,15 @@ const app = Express();
 import { chatWithAI } from "./ai_functions/prompt_gemini.js";
 import { chats, parkMembers } from "./constants.js";
 import { groupChat } from "./chat.js";
+import cors from 'cors';
 
 // Add middleware for parsing request body
 app.use(Express.urlencoded({ extended: false }))
 app.use(Express.json())
+app.use(cors({
+    credentials: true,
+    origin: '*'
+}));
 
 // Creating a test route to see if server is reachable
 app.get("/test", (req, res) => {
@@ -14,7 +19,7 @@ app.get("/test", (req, res) => {
 })
 
 // Creating route for getting someones response
-app.get("/chat/:character", async (req, res) => {
+app.post("/chat/:character", async (req, res) => {
     const prompt = req.body.prompt;
     const character = req.params.character;
 
@@ -34,7 +39,7 @@ app.get("/chat/:character", async (req, res) => {
 })
 
 // This route deals with the group chat
-app.get("/group", async(req, res) => {
+app.post("/group", async(req, res) => {
     const prompt = req.body.prompt;
 
     try {
@@ -43,7 +48,6 @@ app.get("/group", async(req, res) => {
         let cleanedResponse = response.replace("json", "");
         cleanedResponse = cleanedResponse.replace("```", "");
         cleanedResponse = cleanedResponse.replace("```", "");
-
         const formattedResponse = JSON.parse(cleanedResponse);
         return res.json(formattedResponse);
     } catch(err) {
